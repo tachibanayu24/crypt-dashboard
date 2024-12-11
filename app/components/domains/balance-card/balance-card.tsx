@@ -23,7 +23,7 @@ export const BalanceCard = ({ title, total, coins }: Props) => {
 
   return (
     <Card>
-      <p className="mb-4 text-xs font-light">{title}</p>
+      <p className="text-xs font-light">{title}</p>
       <div className="flex justify-center">
         {total && coins ? (
           <div>
@@ -37,7 +37,14 @@ export const BalanceCard = ({ title, total, coins }: Props) => {
                     // TODO: https://recharts.org/en-US/examples/PieChartWithCustomizedLabel
                     data={data}
                   />
-                  <Tooltip />
+                  <Tooltip
+                    content={(arg) => {
+                      if (arg) {
+                        console.log(arg);
+                        return <div>aa{/* <span>{payload[0].value}</span> */}</div>;
+                      }
+                    }}
+                  />
                 </PieChart>
               </ResponsiveContainer>
             </div>
