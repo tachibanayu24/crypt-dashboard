@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="min-h-screen">
-        <header className="fixed top-0 w-full px-8 py-2 shadow-md backdrop-blur-sm">
+        <header className="z-front fixed top-0 w-full px-8 py-2 shadow-md backdrop-blur-sm">
           <h1 className="text-lg font-extrabold">Crypt dashboard</h1>
         </header>
         <main className="mt-[44px] px-8 py-4">{children}</main>

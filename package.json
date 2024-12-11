@@ -19,15 +19,19 @@
     "bybit-api": "^3.10.27",
     "isbot": "^5.1.17",
     "lightweight-charts": "^4.2.2",
+    "lodash": "^4.17.21",
     "react": "^19.0.0",
+    "react-is": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "7.0.2-pre.0"
+    "react-router": "7.0.2-pre.0",
+    "recharts": "^2.14.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.4",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.16.0",
     "@react-router/dev": "7.0.2-pre.0",
+    "@types/lodash": "^4.17.13",
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
