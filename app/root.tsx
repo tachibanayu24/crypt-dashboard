@@ -15,6 +15,10 @@ export const links: Route.LinksFunction = () => [
     href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
   { rel: 'stylesheet', href: stylesheet },
+  {
+    rel: 'icon',
+    href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>🌛</text></svg>',
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -26,11 +30,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        <header>
-          <h1>Crypt dashboard</h1>
+      <body className="min-h-screen">
+        <header className="fixed top-0 w-full px-8 py-2 shadow-md backdrop-blur-sm">
+          <h1 className="text-lg font-extrabold">Crypt dashboard</h1>
         </header>
-        {children}
+        <main className="mt-[44px] px-8 py-4">{children}</main>
         <ScrollRestoration />
         <Scripts />
       </body>
