@@ -50,6 +50,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
   const total = unified.totalEquity + fund.totalEquity;
 
+  console.log(unified.totalPerpUPL);
+
   return (
     <div>
       <div className="flex items-center gap-2">
@@ -60,7 +62,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       </div>
 
       <div className="flex gap-8 py-6">
-        <BalanceCard title="UNIFIED ACCOUNT" total={unified.totalEquity} coins={unified.coin} />
+        <BalanceCard
+          title="UNIFIED ACCOUNT"
+          total={unified.totalEquity}
+          unrealisedPL={unified.totalPerpUPL}
+          coins={unified.coin}
+        />
         <BalanceCard title="FUND ACCOUNT" total={fund.totalEquity} coins={fund.coin} />
         {/* APIなし */}
         <BalanceCard title="EARN ACCOUNT" />

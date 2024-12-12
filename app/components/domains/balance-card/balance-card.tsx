@@ -8,18 +8,17 @@ import { roundCurrency } from '~/utils';
 type Props = {
   title: string;
   total?: number | string;
+  unrealisedPL?: number | string;
   coins?: { coin: string; usdValue: number | string }[];
 };
 
-export const BalanceCard = ({ title, total, coins }: Props) => {
+export const BalanceCard = ({ title, total, unrealisedPL, coins }: Props) => {
   const data = useMemo(() => {
     return coins?.map((c) => ({
       name: c.coin,
       value: roundCurrency(c.usdValue),
     }));
   }, [coins]);
-
-  console.log(data);
 
   return (
     <Card>
@@ -28,6 +27,7 @@ export const BalanceCard = ({ title, total, coins }: Props) => {
         {total && coins ? (
           <div>
             <Amount>{total}</Amount>
+
             <div className="h-40 w-40">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart width={400} height={400}>
@@ -48,6 +48,13 @@ export const BalanceCard = ({ title, total, coins }: Props) => {
                 </PieChart>
               </ResponsiveContainer>
             </div>
+
+            {unrealisedPL && (
+              <span className="flex items-baseline justify-end gap-1 text-slate-300">
+                <span className="text-xs">UPL</span>
+                <Amount size="sm">{unrealisedPL}</Amount>
+              </span>
+            )}
           </div>
         ) : (
           <span className="text-sm font-extralight text-red-500">Could not be retrieved.</span>
